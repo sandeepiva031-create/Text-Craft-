@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TextCraft Editor</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(to bottom right, #1e3c72, #2a5298, #4ca1af);
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      .brand {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #ffdd59;
+        padding: 15px 25px;
+      }
+
+      .heading {
+        text-align: center;
+        font-size: 2.5rem;
+        color: white;
+        margin-top: 5px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        width: 650px;
+        height: 500px;
+        margin: 25px auto 15px;
+        padding: 20px;
+        background-color: #f4f6f8;
+        border-radius: 12px;
+      }
+
+      textarea {
+        width: 58%;
+        height: 100%;
+        resize: none;
+        font-size: 1.4rem;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      .sidebar {
+        width: 39%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .box {
+        height: 31%;
+        padding: 10px;
+        background-color: white;
+        border-radius: 8px;
+      }
+
+      .box p {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      .color-btns button {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        margin-right: 8px;
+      }
+
+      .color-btns button:hover {
+        transform: scale(1.1);
+      }
+
+      .font-btns button {
+        display: block;
+        width: 100%;
+        height: 2rem;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        margin-top: 5px;
+        background-color: #eef2f5;
+        border: none;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      .font-btns button:hover {
+        background-color: #dce3e8;
+      }
+
+      .btn-area {
+        text-align: center;
+      }
+
+      #saveBtn {
+        width: 9rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+      }
+
+      #saveBtn:hover {
+        background-color: #ee5253;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="brand">TextCraft</div>
+    <h1 class="heading">Create Your Custom Note</h1>
+
+    <div class="container">
+      <textarea id="myText" placeholder="Write something here..."></textarea>
+
+      <div class="sidebar">
+        <div class="box">
+          <p>Text Color:</p>
+          <div class="color-btns">
+            <button onclick="setTextColor('crimson')" style="background-color: crimson;"></button>
+            <button onclick="setTextColor('darkgreen')" style="background-color: darkgreen;"></button>
+            <button onclick="setTextColor('navy')" style="background-color: navy;"></button>
+          </div>
+        </div>
+
+        <div class="box">
+          <p>Box Background:</p>
+          <div class="color-btns">
+            <button onclick="setBgColor('lightyellow')" style="background-color: lightyellow;"></button>
+            <button onclick="setBgColor('lavender')" style="background-color: lavender;"></button>
+            <button onclick="setBgColor('honeydew')" style="background-color: honeydew;"></button>
+          </div>
+        </div>
+
+        <div class="box">
+          <p>Font Style:</p>
+          <div class="font-btns">
+            <button onclick="setFont('monospace')" style="font-family: monospace;">Monospace</button>
+            <button onclick="setFont('cursive')" style="font-family: cursive;">Cursive</button>
+            <button onclick="setFont('verdana')" style="font-family: verdana;">Verdana</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-area">
+      <button id="saveBtn" onclick="saveNote()">Save Text</button>
+    </div>
+
+    <script>
+      let area = document.getElementById("myText");
+
+      function setTextColor(c) {
+        area.style.color = c;
+      }
+
+      function setBgColor(bg) {
+        area.style.backgroundColor = bg;
+      }
+
+      function setFont(f) {
+        area.style.fontFamily = f;
+      }
+
+      function saveNote() {
+        alert("Your text design is ready!");
+      }
+    </script>
+
+  </body>
+</html>
